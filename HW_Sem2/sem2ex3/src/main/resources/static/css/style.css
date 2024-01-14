@@ -5,9 +5,14 @@ H2 {
   text-align: left;
 }
 P {
-  font-size: 120%;
+  font-size: 150%;
   padding-left: 20px;
 }
-TH {
-  font-size: 150%;
+td, th {
+    font-size: 150%;
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+td{
+    text-align: center;
 }
