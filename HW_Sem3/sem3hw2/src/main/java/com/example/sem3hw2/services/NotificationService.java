@@ -1,6 +1,6 @@
-package com.example.sem3hw.services;
+package com.example.sem3hw2.services;
 
-import com.example.sem3hw.domain.User;
+import com.example.sem3hw2.domain.User;
 import org.springframework.stereotype.Service;
 
 @Service

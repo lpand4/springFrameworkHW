@@ -1,6 +1,6 @@
-package com.example.sem3hw.services;
+package com.example.sem3hw2.services;
 
-import com.example.sem3hw.domain.User;
+import com.example.sem3hw2.domain.User;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,11 +10,11 @@ public class UserService {
     //endregion
 
     //region Конструкторы
-    // Внедрение зависимости через конструктор
     public UserService(NotificationService notificationService) {
         this.notificationService = notificationService;
     }
     //endregion
+
     /**
      * Создание юзера
      * @param name имя
@@ -29,6 +29,7 @@ public class UserService {
         user.setEmail(email);
         return user;
     }
+
     /**
      * Перегрузка создания юзера
      * @param user новый юзер

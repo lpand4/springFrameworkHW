@@ -1,8 +1,11 @@
-package com.example.sem3hw.controllers;
+package com.example.sem3hw2.controllers;
 
-import com.example.sem3hw.domain.User;
-import com.example.sem3hw.services.DataProcessingService;
-import org.springframework.web.bind.annotation.*;
+import com.example.sem3hw2.domain.User;
+import com.example.sem3hw2.services.DataProcessingService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
+
     //region Поля
     private DataProcessingService service;
     //endregion
@@ -35,7 +39,6 @@ public class TaskController {
     public List<User> sortUserByAge(){
         return service.sortUsersByAge(service.getListOfUsers());
     }
-
 
     /**
      * Фильтруют юзеров по возрасту(больше чем указанный возраст)

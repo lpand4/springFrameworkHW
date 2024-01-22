@@ -8,8 +8,11 @@ import java.util.List;
 
 @Repository
 public class UserRepository {
+    //region Поля
     private List<User> users = new ArrayList<>();
+    //endregion
 
+    //region Вспомогательные методы
     public List<User> getUsers() {
         return users;
     }
@@ -17,4 +20,5 @@ public class UserRepository {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+    //endregion
 }

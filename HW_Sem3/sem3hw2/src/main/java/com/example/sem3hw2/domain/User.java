@@ -1,12 +1,20 @@
-package com.example.sem3hw.domain;
+package com.example.sem3hw2.domain;
 
 public class User {
     //region Поля
+    private int id;
     private String name;
     private String email;
     private int age;
     //endregion
+
     //region Вспомогательные методы
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

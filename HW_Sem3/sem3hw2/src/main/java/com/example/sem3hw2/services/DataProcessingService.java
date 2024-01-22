@@ -1,7 +1,7 @@
-package com.example.sem3hw.services;
+package com.example.sem3hw2.services;
 
-import com.example.sem3hw.domain.User;
-import com.example.sem3hw.repository.UserRepository;
+import com.example.sem3hw2.domain.User;
+import com.example.sem3hw2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +11,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class DataProcessingService {
-
-
     //region Поля
     @Autowired
     private UserRepository repository;
@@ -20,7 +18,7 @@ public class DataProcessingService {
 
     /**
      * Сортировка юзеров по возрасту
-     * @param users список юзеров
+      * @param users список юзеров
      * @return отсортированный список юзеров
      */
     public List<User> sortUsersByAge(List<User> users) {
@@ -40,6 +38,7 @@ public class DataProcessingService {
                 .filter(user -> user.getAge() > age)
                 .collect(Collectors.toList());
     }
+
     /**
      * Средний возраст всех юзеров
      * @param users список юзеров
@@ -58,14 +57,15 @@ public class DataProcessingService {
      * @return список юзеров
      */
     public List<User> getListOfUsers(){
-        return repository.getUsers();
+        return repository.getAll();
     }
+
     /**
      * Добавление нового юзера
      * @param user новый юзер
      */
     public void  addUserToList(User user)
     {
-        repository.getUsers().add(user);
+        repository.addUser(user);
     }
 }
