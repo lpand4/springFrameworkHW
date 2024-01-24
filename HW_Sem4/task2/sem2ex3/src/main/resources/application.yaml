@@ -1,0 +1,7 @@
+requests:
+  selectAll: "SELECT * FROM userTable"
+  selectUser: "SELECT * FROM userTable WHERE id=?"
+  saveUser: "INSERT INTO userTable VALUES (DEFAULT, ?, ?)"
+  deleteUser: "DELETE FROM userTable WHERE id=?"
+  updateUser: "UPDATE tasksTable SET name=?, description=? WHERE id=?"
+

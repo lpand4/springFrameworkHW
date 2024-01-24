@@ -1,13 +1,12 @@
 package com.example.sem4hw.repositories;
 
+import com.example.sem4hw.domain.DataRequest;
 import com.example.sem4hw.domain.Task;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -15,44 +14,62 @@ import java.util.List;
 public class TaskRepository {
 
     JdbcTemplate jdbc;
+    DataRequest dr;
 
+    /**
+     * Получение списка задач
+     * @return список задач
+     */
     public List<Task> getAll(){
-        String sql = "SELECT * FROM tasksTable";
         RowMapper<Task> taskRowMapper = (r, i) -> {
             Task rowObject = new Task(r.getLong("id"),
                     r.getString("name"),
                     r.getString("description"));
             return rowObject;
         };
-        return jdbc.query(sql, taskRowMapper);
+        return jdbc.query(dr.getSelectAll(), taskRowMapper);
     }
 
-
+    /**
+     * Добавление задачи в базу
+     * @param task новая задача
+     * @return
+     */
     public Task addTask(Task task) {
-        String sql = "INSERT INTO tasksTable VALUES (DEFAULT, ?, ?)";
-        jdbc.update(sql, task.getName(), task.getDescription());
+        jdbc.update(dr.getSaveTask(), task.getName(), task.getDescription());
         return task;
     }
 
+    /**
+     * Удаление задачи по айди
+     * @param id айди необходимой задачи
+     */
     public void deleteTask(Long id) {
-        String sql = "DELETE FROM tasksTable WHERE id=?";
-        jdbc.update(sql, id);
+        jdbc.update(dr.getDeleteTask(), id);
     }
 
+    /**
+     * Обновление задачи по айди
+     * @param task Новые данные
+     * @return
+     */
     public Task updateTask(Task task) {
-        String sql = "UPDATE tasksTable SET name=?, description=? WHERE id=?";
-        jdbc.update(sql, task.getName(), task.getDescription(), task.getId());
+        jdbc.update(dr.getUpdateTask(), task.getName(), task.getDescription(), task.getId());
         return getOne(task.getId());
     }
 
+    /**
+     * Получение задачи по айди
+     * @param id айди необходимой задачи
+     * @return необходимая задача
+     */
     public Task getOne(Long id) {
-        String sql = "SELECT * FROM tasksTable WHERE id=?";
         RowMapper<Task> taskRowMapper = (r, i) -> {
             Task rowObject = new Task(r.getLong("id"),
                     r.getString("name"),
                     r.getString("description"));
             return rowObject;
         };
-        return jdbc.queryForObject(sql, new Object[]{id}, taskRowMapper);
+        return jdbc.queryForObject(dr.getSelectTask(), new Object[]{id}, taskRowMapper);
     }
 }
