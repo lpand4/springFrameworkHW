@@ -3,5 +3,5 @@ requests:
   selectTask: "SELECT * FROM tasksTable WHERE id=?"
   saveTask: "INSERT INTO tasksTable VALUES (DEFAULT, ?, ?)"
   deleteTask: "DELETE FROM tasksTable WHERE id=?"
-  updateTask: "UPDATE tasksTable SET firstName=?, lastName=? WHERE id=?"
+  updateTask: "UPDATE tasksTable SET name=?, description=? WHERE id=?"
 

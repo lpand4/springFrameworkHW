@@ -31,6 +31,7 @@ public class TaskController {
             service.addTask(new Task(null,"Приготовить еду", "Приготовить еду до 17:00"));
         }
         model.addAttribute("tasks", service.getAll());
+        model.addAttribute("count", service.getAll().size());
         return "tasks";
     }
 

@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta charset="UTF-8">
     <title>Дневник задач</title>
 </head>
-<body>
-<h1>Список задач:</h1>
-<table>
-    <tr>
-        <th>ИМЯ ЗАДАЧИ</th>
-        <th>ОПИСАНИЕ</th>
-    </tr>
-    <tr th:each="task:${tasks}">
-        <td th:text="${task.name}">TASK</td>
-        <td th:text="${task.description}">DESCRIPTION</td>
-        <td>
-            <form th:action="@{tasks/update/{id}(id=${task.id})}">
-                <button type="submit">Изменить</button>
-            </form>
-        </td>
-        <td>
-            <form th:action="@{tasks/delete/{id}(id=${task.id})}">
-            <button type="submit">Удалить</button>
-            </form>
-        </td>
-    </tr>
-</table>
-<form action="/tasks/new">
-    <button type="submit">Добавить задачу</button>
-</form>
-
-
+<body id="demo">
+    <h1 class="demoFont" th:text="'Всего задач '+ ${count} + ':'">Список задач:</h1>
+    <table class="purpleHorizon">
+        <tr>
+            <thead>
+            <th class="demoFont" >ИМЯ ЗАДАЧИ</th>
+            <th>ОПИСАНИЕ</th>
+            </thead>
+        </tr>
+        <tr th:each="task:${tasks}">
+            <td th:text="${task.name}">TASK</td>
+            <td th:text="${task.description}">DESCRIPTION</td>
+            <td>
+                <form th:action="@{tasks/update/{id}(id=${task.id})}">
+                    <button class="editbtn" type="submit">Изменить</button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{tasks/delete/{id}(id=${task.id})}">
+                <button class="deletebtn" type="submit">Удалить</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <form action="/tasks/new">
+        <button class="addbtn" type="submit">Добавить задачу</button>
+    </form>
 </body>
 </html>
