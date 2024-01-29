@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -25,13 +26,13 @@ public class TaskController {
         return taskService.getAllTask();
     }
 
-//    @GetMapping("/status/{status}")
-//    public List<Task> getTasksByStatus(@PathVariable TaskStatus status){
-//        return taskService.findTasksByStatus(status);
-//    }
+    @GetMapping("/status/{status}")
+    public List<Task> getTasksByStatus(@PathVariable TaskStatus status){
+        return taskService.findTasksByStatus(status);
+    }
 
     @PutMapping("/{id}")
-    public Task updateTaskStatus(@PathVariable Long id, @RequestBody Task task){
+    public Optional<Task> updateTaskStatus(@PathVariable Long id, @RequestBody Task task){
         return taskService.changeStatusOfTask(id, task.getStatus());
     }
 

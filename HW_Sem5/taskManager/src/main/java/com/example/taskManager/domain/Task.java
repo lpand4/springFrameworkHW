@@ -25,6 +25,7 @@ public class Task {
     @Column(name = "time_of_creation", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime timeOfCreation;
 
+
     @PrePersist
     private void createTask(){
         if (this.status == null)
