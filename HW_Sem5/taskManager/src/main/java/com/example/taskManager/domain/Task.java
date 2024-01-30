@@ -2,14 +2,15 @@ package com.example.taskManager.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+/**
+ * Тело задачи
+ */
 @Data
 @Entity
 @Table(name = "tasks")
-
 public class Task {
 
     @Id
@@ -22,12 +23,14 @@ public class Task {
     @Column(nullable = false)
     private TaskStatus status;
 
-    @Column(name = "time_of_creation", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "time_of_creation", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime timeOfCreation;
 
-
+    /**
+     * Изначальное выставление даты и статуса в начальное положение
+     */
     @PrePersist
-    private void createTask(){
+    private void createTask() {
         if (this.status == null)
             this.status = TaskStatus.NOT_STARTED;
         if (this.timeOfCreation == null)
