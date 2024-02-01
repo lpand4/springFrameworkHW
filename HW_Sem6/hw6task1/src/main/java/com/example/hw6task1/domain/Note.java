@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * Тело заметки
+ */
 @Data
 @Entity
 @Table(name = "notes")
@@ -19,9 +22,11 @@ public class Note {
     @Column(name = "date_of_creation")
     private LocalDateTime dateOfCreation;
 
+    /**
+     * Предсоздание времени в записки
+     */
     @PrePersist
     private void createNote() {
-        if (this.dateOfCreation == null)
-            this.dateOfCreation = LocalDateTime.now();
+        if (this.dateOfCreation == null) this.dateOfCreation = LocalDateTime.now();
     }
 }
