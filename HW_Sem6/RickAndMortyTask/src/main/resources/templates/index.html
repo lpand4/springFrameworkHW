@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+<div class="v1_3" th:each="character:${characters.results}">
+    <div class="v1_5">
+    </div>
+    <span class="v1_6">Rick and Morty</span>
+    <div class="v4_3">
+    </div>
+    <div class="v4_5"></div>
+    <div class="v4_4" ><img th:attr="src=@{${character.image}}" /></div>
+    <div class="v4_6"><img th:attr="src=@{${character.image}}" /></div>
+    <span class="v4_7">
+        <table>
+            <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
+            <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+            <tr><td th:text="${character.gender}">gender</td></tr>
+        </table>
+    </span>
+    <span class="v4_8">
+        <table>
+            <tr><td class="name" th:text="${character.name}">Name</td></tr>
+            <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+            <tr><td th:text="${character.gender}">gender</td></tr>
+        </table>
+    </span>
+</div>
+</body>
+</html>
