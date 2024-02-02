@@ -6,7 +6,7 @@ body {
 }
 .v1_3 {
   width: 100%;
-  height: 5100px;
+  height: 5300px;
   background: #C0C0C0 !important;
   opacity: 1;
   position: absolute;
@@ -79,11 +79,7 @@ body {
   grid-auto-rows: 305px;
   counter-reset: div;
 }
-.item:nth-child(6n + 4),
-{
-  grid-column: auto /span 2;
-  grid-row: auto /span 2;
-}
+
 .item {
   border: solid;
   display: flex;

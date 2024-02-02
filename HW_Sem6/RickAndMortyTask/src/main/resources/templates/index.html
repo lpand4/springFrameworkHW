@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap" rel="stylesheet" />
     <link href="./css/main.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Rick and Morty API</title>
 </head>
 <body>
 <div class="v1_3">
@@ -8,7 +8,7 @@
     <span class="v1_6">Rick and Morty</span>
 
     <div class="startgrid">
-        <div class="grid" th:each="character3:${characters[0].results}">
+        <div class="grid" th:each="character3:${characters[0].results.size()/2}">
             <div class="item" th:each="character:${characters[0].results}">
                 <img class="v4_6" th:attr="src=@{${character.image}}" />
                     <table class="v4_8">
