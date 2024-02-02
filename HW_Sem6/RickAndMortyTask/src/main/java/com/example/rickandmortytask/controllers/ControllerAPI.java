@@ -26,6 +26,6 @@ public class ControllerAPI {
 //        secondPart.setResults(allCharacters.getResults().subList(size/2 + 1,size));
 //        Characters[] allChar = new Characters[]{firstPart,secondPart};
         m.addAttribute("characters", allCharacters);
-        return "rickandmorty";
+        return "index";
     }
 }

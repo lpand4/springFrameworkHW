@@ -3,29 +3,31 @@
     <title>Document</title>
 </head>
 <body>
-<div class="v1_3" th:each="character:${characters.results}">
-    <div class="v1_5">
-    </div>
+<div class="v1_3">
+    <div class="v1_5"></div>
     <span class="v1_6">Rick and Morty</span>
-    <div class="v4_3">
+
+    <div class="startgrid">
+        <div class="grid" th:each="character:${characters.results}">
+            <div class="item">
+                <img class="v4_6" th:attr="src=@{${character.image}}" />
+                    <table class="v4_8">
+                        <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
+                        <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+                        <tr><td th:text="${character.gender}">gender</td></tr>
+                    </table>
+            </div>
+            <div class="item">
+                <img class="v4_6" th:attr="src=@{${character.image}}" />
+                <table class="v4_8">
+                    <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
+                    <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+                    <tr><td th:text="${character.gender}">gender</td></tr>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="v4_5"></div>
-    <div class="v4_4" ><img th:attr="src=@{${character.image}}" /></div>
-    <div class="v4_6"><img th:attr="src=@{${character.image}}" /></div>
-    <span class="v4_7">
-        <table>
-            <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
-            <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
-            <tr><td th:text="${character.gender}">gender</td></tr>
-        </table>
-    </span>
-    <span class="v4_8">
-        <table>
-            <tr><td class="name" th:text="${character.name}">Name</td></tr>
-            <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
-            <tr><td th:text="${character.gender}">gender</td></tr>
-        </table>
-    </span>
+
 </div>
 </body>
 </html>
