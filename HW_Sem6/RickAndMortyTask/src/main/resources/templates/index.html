@@ -8,8 +8,8 @@
     <span class="v1_6">Rick and Morty</span>
 
     <div class="startgrid">
-        <div class="grid" th:each="character:${characters.results}">
-            <div class="item">
+        <div class="grid" th:each="character3:${characters[0].results}">
+            <div class="item" th:each="character:${characters[0].results}">
                 <img class="v4_6" th:attr="src=@{${character.image}}" />
                     <table class="v4_8">
                         <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
@@ -17,7 +17,7 @@
                         <tr><td th:text="${character.gender}">gender</td></tr>
                     </table>
             </div>
-            <div class="item">
+            <div class="item" th:each="character:${characters[1].results}">
                 <img class="v4_6" th:attr="src=@{${character.image}}" />
                 <table class="v4_8">
                     <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
