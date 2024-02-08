@@ -9,10 +9,19 @@ import org.springframework.stereotype.Component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Аспект регистрации действий пользователя
+ */
 @Component
 @Aspect
 public class RegisterAspect {
 
+
+    /**
+     * Регистрация использования метода с датой и временем выполнения
+     * @param joinPoint
+     * @return
+     */
     @SneakyThrows
     @Around(value = "@annotation(com.example.hw8task1.aspects.annotation.TrackUserAction)")
     public Object registerUserAction(ProceedingJoinPoint joinPoint) {
