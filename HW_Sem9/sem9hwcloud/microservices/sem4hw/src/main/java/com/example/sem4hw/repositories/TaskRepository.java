@@ -1,6 +1,6 @@
 package com.example.sem4hw.repositories;
 
-import com.example.sem4hw.domain.DataRequest;
+import com.example.sem4hw.configuration.Configuration;
 import com.example.sem4hw.domain.Task;
 import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,7 +14,7 @@ import java.util.List;
 public class TaskRepository {
 
     JdbcTemplate jdbc;
-    DataRequest dr;
+    Configuration dr;
 
     /**
      * Получение списка задач
