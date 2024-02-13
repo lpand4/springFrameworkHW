@@ -1,0 +1,13 @@
+requests:
+  selectAll: "SELECT * FROM tasksTable"
+  selectTask: "SELECT * FROM tasksTable WHERE id=?"
+  saveTask: "INSERT INTO tasksTable VALUES (DEFAULT, ?, ?)"
+  deleteTask: "DELETE FROM tasksTable WHERE id=?"
+  updateTask: "UPDATE tasksTable SET name=?, description=? WHERE id=?"
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: TaskMicroservice

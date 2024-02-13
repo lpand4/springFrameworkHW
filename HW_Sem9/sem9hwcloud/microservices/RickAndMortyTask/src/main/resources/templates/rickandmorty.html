@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Rick And Morty</title>
+</head>
+<body>
+<div>
+    <div id="topnadpis">
+        <h1> Rick and Morty </h1>
+    </div>
+    <table class="chess">
+        <tr th:each="character:${characters.results}">
+
+            <td>
+                <table th:if="${character.id%2==1}">
+                    <tr class="cardOfCharacter">
+                        <th><img th:attr="src=@{${character.image}}" /> </th>
+                        <th>
+                            <table>
+                                <tr><td class="name" th:text="'Имя: ' + ${character.name}">Name</td></tr>
+                                <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+                                <tr><td th:text="'Гендер: ' + ${character.gender}">gender</td></tr>
+                            </table>
+                        </th>
+                    </tr>
+                </table>
+            </td>
+
+            <td>
+                <table  th:if="${character.id%2==0}">
+                    <tr class="cardOfCharacter">
+                        <th><img th:attr="src=@{${character.image}}" /></th>
+                        <th>
+                            <table>
+                                <tr><td class="name" th:text="'Имя: ' + ${character.name}">Name</td></tr>
+                                <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+                                <tr><td th:text="'Гендер: ' + ${character.gender}">gender</td></tr>
+                            </table>
+                        </th>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

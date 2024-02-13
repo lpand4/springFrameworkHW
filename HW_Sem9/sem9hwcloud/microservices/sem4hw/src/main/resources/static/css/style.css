@@ -1,0 +1,109 @@
+#demo{
+background: #CE5937 !important;
+background: -moz-linear-gradient(left, #CE5937 0%, #C59237 100%) !important;
+background: -webkit-linear-gradient(left, #CE5937 0%, #C59237 100%) !important;
+background: linear-gradient(to right, #CE5937 0%, #C59237 100%) !important;
+overflow: auto;
+}
+.demoFont {
+font-family: Georgia, serif;
+font-size: 35px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 700;
+text-decoration: none;
+font-style: bold;
+font-variant: normal;
+text-transform: none;
+}
+.formFont {
+font-family: Georgia, serif;
+font-size: 25px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 700;
+text-decoration: none;
+font-style: bold;
+font-variant: normal;
+text-transform: none;
+}
+.inputFont {
+font-family: Georgia, serif;
+font-size: 25px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 700;
+text-decoration: none;
+font-style: bold;
+font-variant: normal;
+text-transform: none;
+}
+
+table.purpleHorizon {
+   font-family: Georgia, serif;
+   border: 3px solid #000000;
+   background-color: #394F55;
+   width: 350px;
+   text-align: center;
+   !important;
+ }
+ table.purpleHorizon td, table.purpleHorizon th {
+   border: 2px solid #000000;
+   padding: 5px 2px;
+ }
+ table.purpleHorizon tbody td {
+   font-size: 20px;
+   font-weight: bold;
+   color: #FFFFFF;
+ }
+ table.purpleHorizon thead {
+   background: #961E62;
+   border-bottom: 2px solid #000000;
+ }
+ table.purpleHorizon thead th {
+   font-size: 20px;
+   font-weight: bold;
+   color: #FFFFFF;
+   text-align: center;
+   border-left: 2px solid #000000;
+ }
+ table.purpleHorizon thead th:first-child {
+   border-left: none;
+ }
+.addbtn{
+    background: #1CF538 none no-repeat scroll 0 0;
+    font-family: Georgia, serif;
+        font-size: 20px;
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+}
+
+.editbtn{
+    background: #6550F5 none no-repeat scroll 0 0;
+    font-family: Georgia, serif;
+        font-size: 20px;
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+}
+.deletebtn{
+    background: #F50000 none no-repeat scroll 0 0;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}

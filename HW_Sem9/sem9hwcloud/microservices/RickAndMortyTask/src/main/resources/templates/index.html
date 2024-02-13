@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Rick and Morty API</title>
+</head>
+<body>
+<div class="v1_3">
+    <div class="v1_5"></div>
+    <span class="v1_6">Rick and Morty</span>
+
+    <div class="startgrid">
+        <div class="grid" th:each="character3:${characters[0].results.size()/2}">
+            <div class="item" th:each="character:${characters[0].results}">
+                <img class="v4_6" th:attr="src=@{${character.image}}" />
+                    <table class="v4_8">
+                        <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
+                        <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+                        <tr><td th:text="${character.gender}">gender</td></tr>
+                    </table>
+            </div>
+            <div class="item" th:each="character:${characters[1].results}">
+                <img class="v4_6" th:attr="src=@{${character.image}}" />
+                <table class="v4_8">
+                    <tr><td class="name" th:text=" ${character.name}">Name</td></tr>
+                    <tr> <td th:text="${character.status} + ' - '+ ${character.species}">Status</td></tr>
+                    <tr><td th:text="${character.gender}">gender</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

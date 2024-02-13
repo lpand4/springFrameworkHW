@@ -1,0 +1,39 @@
+body {
+    background: #FFB273 !important;
+    font-variant-ligatures: none;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-decoration-skip-ink: auto;
+}
+body {
+    color: hsla(0,0%,0%,0.8);
+    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: normal;
+    word-wrap: break-word;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+}
+#topnadpis{
+    background: #FF9640 !important;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6vw;
+    font-family: "Microsoft Tai Le";
+    color: #A64B00;
+    max-font-size: 95vh;
+}
+td{
+    width: 50vw;
+    text-align: left;
+    font-size: 30px;
+}
+
+.chess tr:nth-child(odd) td:nth-child(odd) {
+    background: #7375D8;
+}
+.chess tr:nth-child(even) td:nth-child(even) {
+    background: #7375D8;
+}

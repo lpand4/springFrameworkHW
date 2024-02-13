@@ -1,0 +1,17 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: api_gateway
+  cloud:
+    gateway:
+      routes:
+        - id: TaskMicroservice
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/serviceA/**
+        - id: RickAndMortyMicroservice
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/serviceB/**

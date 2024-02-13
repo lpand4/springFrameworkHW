@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title>Обновление задачи</title>
+</head>
+<body id="demo">
+    <form class="formFont" action="#" th:action="@{/serviceA/tasks/update}" th:object="${task}" method="post">
+        <label for="id">ID</label>
+        <input class="inputFont" readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+        <br/>
+
+        <label for="name">Название задачи</label>
+        <input class="inputFont" type="text" th:field="*{name}" id="name" placeholder="Название задачи">
+        <br/>
+
+        <label for="description">Описание</label>
+        <input class="inputFont" type="text" th:field="*{description}" id="description" placeholder="Описание">
+        <br/>
+        <input class="editbtn" type="submit" value="Обновить задачу">
+    </form>
+</body>
+</html>
