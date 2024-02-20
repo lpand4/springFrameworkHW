@@ -1,9 +1,11 @@
 package com.example.hw8task1.aspects;
 
+import com.example.hw8task1.events.NoteCreatedEvent;
 import lombok.SneakyThrows;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
@@ -14,7 +16,7 @@ import java.util.Date;
  */
 @Component
 @Aspect
-public class RegisterAspect {
+public class RegisterAspect implements ApplicationListener<NoteCreatedEvent> {
 
 
     /**
@@ -37,4 +39,14 @@ public class RegisterAspect {
         return result;
     }
 
+    /**
+     * Слушает была ли создана новая заметка и при ее создании оповещает нас в консоли
+     * @param event Событие создания новой заметки
+     */
+    @Override
+    public void onApplicationEvent(NoteCreatedEvent event) {
+        System.out.println("\u001B[31m▄▄▄▄▄▄▄▄▄▄NOTE WAS CREATED▄▄▄▄▄▄▄▄▄▄\u001B[0m");
+        System.out.println(event.getNote());
+        System.out.println("\u001B[31m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\u001B[0m");
+    }
 }

@@ -2,8 +2,10 @@ package com.example.hw8task1.service;
 
 import com.example.hw8task1.aspects.annotation.TrackUserAction;
 import com.example.hw8task1.domain.Note;
+import com.example.hw8task1.events.NoteCreatedEvent;
 import com.example.hw8task1.repository.NoteRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -14,6 +16,13 @@ import java.util.Optional;
 @AllArgsConstructor
 public class NoteService {
 
+    /**
+     * Публикатор
+     */
+    private final ApplicationEventPublisher publisher;
+    /**
+     * Репозиторий на базе данных H2
+     */
     private final NoteRepository repository;
 
     /**
@@ -24,6 +33,10 @@ public class NoteService {
      */
     @TrackUserAction
     public Note createNote(Note note) {
+        /**
+         * Публикуем наше событие
+         */
+        publisher.publishEvent(new NoteCreatedEvent(this, note));
         return repository.save(note);
     }
 
