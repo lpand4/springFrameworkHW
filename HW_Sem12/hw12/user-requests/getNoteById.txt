@@ -1,0 +1,4 @@
+[2024-02-20T17:49:00.904934] | Optional[Note(id=1, header=лечь спать2, description=до 01:00, dateOfCreation=2024-02-20T17:48:53.773051)]
+[2024-02-20T17:50:34.377928600] | com.example.hw8task1.exceptions.NoteNotFoundException: Заметки с данным айди не существует
+[2024-02-20T17:50:36.184616400] | com.example.hw8task1.exceptions.NoteNotFoundException: Заметки с данным айди не существует
+[2024-02-20T17:50:36.645621100] | com.example.hw8task1.exceptions.NoteNotFoundException: Заметки с данным айди не существует

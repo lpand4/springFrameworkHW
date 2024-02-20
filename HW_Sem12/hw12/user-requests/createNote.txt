@@ -1,0 +1,7 @@
+[2024-02-20T17:47:10.264892400] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
+[2024-02-20T17:47:11.356250500] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
+[2024-02-20T17:47:11.882243800] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
+[2024-02-20T17:48:53.758058500] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
+[2024-02-20T17:48:54.431227] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
+[2024-02-20T17:48:54.868671900] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
+[2024-02-20T17:48:55.495957700] | Note(id=null, header=лечь спать2, description=до 01:00, dateOfCreation=null)
